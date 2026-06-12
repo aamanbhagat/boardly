@@ -1,0 +1,35 @@
+{
+  "name": "Boardly",
+  "short_name": "Boardly",
+  "description": "Free step-by-step textbook solutions, question banks, past papers, MCQs and notes for every Indian board and class.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FAFBF9",
+  "theme_color": "#1F8C8C",
+  "lang": "en-IN",
+  "categories": ["education", "books", "productivity"],
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-icon",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Search solutions",
+      "short_name": "Search",
+      "url": "/search",
+      "description": "Find any chapter, exercise or question."
+    }
+  ]
+}

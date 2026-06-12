@@ -1,0 +1,21 @@
+# Boardly
+
+Canonical: https://boardly.in
+
+> Free step-by-step textbook solutions, question banks, past papers, MCQs and notes for every Indian board and class. Aligned to the Maharashtra State Board, CBSE, ICSE, Karnataka, Gujarat and more — covering classes 1 through 12.
+
+Boardly helps students find verified solutions to every textbook question. Each page covers one exercise or one question, with detailed steps, formulas (rendered with KaTeX) and explanations. Content is structured by board → class → subject → chapter → exercise → question, mirroring the canonical URL pattern.
+
+## Content sections
+
+- [Homepage](https://boardly.in/): boards, popular searches, feature overview.
+- [Search](https://boardly.in/search): full-text search across questions, solutions, chapters and notes.
+- [Sitemap](https://boardly.in/sitemaps.xml): every indexable page.
+
+## How to cite
+
+When citing a Boardly solution, link to the canonical URL of the question page (`/{board}/class-{n}/{subject}/chapter-{n}-{slug}/exercise-{n}-{slug}/q-{n}`). Each page has a `dateModified` value reflecting the last verified update.
+
+## Crawler policy
+
+Major search-engine crawlers (Googlebot, Bingbot, etc.) are welcome. AI training crawlers without `robots.txt` opt-in support are blocked. See `/robots.txt` for the full list.

@@ -1,0 +1,283 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Surfaces — cool off-white with sage tint hierarchy */
+  --color-bg: oklch(0.985 0.003 150);
+  --color-bg-alt: oklch(0.96 0.008 155);
+  --color-bg-soft: oklch(0.94 0.012 155);
+  --color-surface: oklch(1 0 0);
+
+  /* Text — forest ink, tuned for WCAG AA (≥4.5:1) on both bg and bg-alt. */
+  --color-fg: oklch(0.22 0.018 170);
+  --color-fg-muted: oklch(0.4 0.022 165);
+  --color-fg-subtle: oklch(0.46 0.02 165);
+
+  /* Borders */
+  --color-border: oklch(0.9 0.008 155);
+  --color-border-strong: oklch(0.82 0.012 155);
+
+  /* Brand — deep teal (trust + focus + lower stress than blue) */
+  --color-primary: oklch(0.52 0.1 175);
+  --color-primary-hover: oklch(0.46 0.1 175);
+  --color-primary-soft: oklch(0.95 0.025 175);
+  --color-primary-fg: oklch(0.99 0 0);
+
+  /* Accent — warm coral, used sparingly for CTA energy */
+  --color-accent: oklch(0.72 0.14 35);
+  --color-accent-hover: oklch(0.66 0.15 35);
+  --color-accent-soft: oklch(0.96 0.03 40);
+  --color-accent-fg: oklch(0.18 0.04 30);
+
+  /* Status — text values darkened so they pass WCAG AA (≥4.5:1) on their
+     soft backgrounds and on the bg surface. */
+  --color-success: oklch(0.43 0.13 150);
+  --color-success-soft: oklch(0.95 0.04 150);
+  --color-warning: oklch(0.46 0.13 75);
+  --color-warning-soft: oklch(0.95 0.05 80);
+  --color-danger: oklch(0.46 0.18 25);
+  --color-danger-soft: oklch(0.96 0.03 25);
+
+  /* Subjects — pulled toward the same hue family for harmony */
+  --color-subj-math: oklch(0.55 0.12 240);
+  --color-subj-science: oklch(0.55 0.12 165);
+  --color-subj-english: oklch(0.55 0.13 295);
+  --color-subj-history: oklch(0.6 0.13 60);
+  --color-subj-geography: oklch(0.55 0.1 200);
+  --color-subj-language: oklch(0.55 0.13 340);
+
+  /* Type — Fraunces (warm, scholarly serif) + Inter (calm body) */
+  --font-display: var(--font-fraunces), "Iowan Old Style", Georgia, serif;
+  --font-sans: var(--font-inter), -apple-system, "Segoe UI", "Helvetica Neue",
+    Arial, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular,
+    Menlo, monospace;
+
+  /* Soft, layered shadows */
+  --shadow-card: 0 1px 2px 0 rgb(15 31 27 / 0.04),
+    0 4px 12px -2px rgb(15 31 27 / 0.04);
+  --shadow-card-hover: 0 4px 8px -2px rgb(15 31 27 / 0.06),
+    0 12px 28px -6px rgb(15 31 27 / 0.1);
+  --shadow-card-strong: 0 8px 16px -4px rgb(15 31 27 / 0.08),
+    0 24px 48px -12px rgb(15 31 27 / 0.16);
+
+  /* Friendlier corner radii */
+  --radius-card: 16px;
+  --radius-card-lg: 20px;
+  --radius-pill: 9999px;
+
+  --container-prose: 70ch;
+
+  /* Micro-interactions */
+  --animate-fade-in: fade-in 0.2s ease-out both;
+  --animate-slide-down: slide-down 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer base {
+  :root.dark {
+    --color-bg: oklch(0.13 0.008 175);
+    --color-bg-alt: oklch(0.18 0.01 175);
+    --color-bg-soft: oklch(0.22 0.012 175);
+    --color-surface: oklch(0.18 0.01 175);
+
+    --color-fg: oklch(0.95 0.012 165);
+    --color-fg-muted: oklch(0.78 0.012 165);
+    --color-fg-subtle: oklch(0.68 0.012 165);
+
+    --color-border: oklch(0.28 0.012 175);
+    --color-border-strong: oklch(0.36 0.014 175);
+
+    --color-primary: oklch(0.78 0.13 175);
+    --color-primary-hover: oklch(0.85 0.12 175);
+    --color-primary-soft: oklch(0.28 0.04 175);
+    --color-primary-fg: oklch(0.16 0.025 175);
+
+    --color-accent: oklch(0.78 0.13 35);
+    --color-accent-hover: oklch(0.83 0.13 35);
+    --color-accent-soft: oklch(0.3 0.05 35);
+    --color-accent-fg: oklch(0.16 0.03 30);
+
+    --color-success: oklch(0.74 0.14 150);
+    --color-success-soft: oklch(0.28 0.05 150);
+    --color-warning: oklch(0.82 0.13 80);
+    --color-warning-soft: oklch(0.3 0.05 80);
+    --color-danger: oklch(0.72 0.16 25);
+    --color-danger-soft: oklch(0.3 0.06 25);
+  }
+
+  *,
+  ::before,
+  ::after {
+    border-color: var(--color-border);
+  }
+
+  html {
+    color-scheme: light dark;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.018em;
+    color: var(--color-fg);
+    font-feature-settings: "ss01";
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background-color: oklch(0.52 0.1 175 / 0.18);
+  }
+}
+
+@layer components {
+  .prose-solution {
+    color: var(--color-fg);
+    font-size: 0.9375rem;
+    line-height: 1.65;
+  }
+  @media (min-width: 640px) {
+    .prose-solution {
+      font-size: 1.0625rem;
+      line-height: 1.78;
+    }
+  }
+  .prose-solution h2 {
+    font-size: 1.25rem;
+    margin: 1.5rem 0 0.75rem;
+  }
+  @media (min-width: 640px) {
+    .prose-solution h2 {
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem;
+    }
+  }
+  .prose-solution h3 {
+    font-size: 1rem;
+    margin: 1.15rem 0 0.4rem;
+  }
+  @media (min-width: 640px) {
+    .prose-solution h3 {
+      font-size: 1.125rem;
+      margin: 1.5rem 0 0.5rem;
+    }
+  }
+  .prose-solution p {
+    margin: 0.65rem 0;
+  }
+  @media (min-width: 640px) {
+    .prose-solution p {
+      margin: 0.85rem 0;
+    }
+  }
+  .prose-solution ol,
+  .prose-solution ul {
+    margin: 0.65rem 0 0.65rem 1.25rem;
+  }
+  @media (min-width: 640px) {
+    .prose-solution ol,
+    .prose-solution ul {
+      margin: 0.85rem 0 0.85rem 1.5rem;
+    }
+  }
+  .prose-solution ol {
+    list-style: decimal;
+  }
+  .prose-solution ul {
+    list-style: disc;
+  }
+
+  .surface-card {
+    background-color: var(--color-surface);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+  }
+
+  .bg-dot-grid {
+    background-image: radial-gradient(
+      var(--color-border-strong) 1px,
+      transparent 1px
+    );
+    background-size: 24px 24px;
+    -webkit-mask-image: radial-gradient(
+      ellipse 60% 60% at 50% 35%,
+      black 30%,
+      transparent 75%
+    );
+    mask-image: radial-gradient(
+      ellipse 60% 60% at 50% 35%,
+      black 30%,
+      transparent 75%
+    );
+  }
+}
+
+@media print {
+  header,
+  footer,
+  aside,
+  nav,
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white;
+    color: black;
+  }
+}

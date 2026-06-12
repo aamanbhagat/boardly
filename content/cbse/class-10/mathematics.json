@@ -1,0 +1,247 @@
+{
+  "board": {
+    "slug": "cbse",
+    "name": "CBSE",
+    "state": "All India",
+    "description": "Central Board of Secondary Education — the largest national board in India, following NCERT curriculum."
+  },
+  "standard": {
+    "classNumber": 10,
+    "level": "secondary",
+    "description": "Class 10 — the first board examination year in the Indian school system."
+  },
+  "subject": {
+    "slug": "mathematics",
+    "name": "Mathematics",
+    "color": "math",
+    "description": "NCERT Class 10 Mathematics — Real Numbers, Polynomials, Coordinate Geometry, Trigonometry, Statistics and Probability."
+  },
+  "chapters": [
+    {
+      "slug": "real-numbers",
+      "name": "Real Numbers",
+      "chapterNumber": 1,
+      "description": "Euclid's division lemma, the Fundamental Theorem of Arithmetic, and proofs of irrationality.",
+      "exercises": [
+        {
+          "slug": "exercise-1-1",
+          "name": "Exercise 1.1",
+          "exerciseNumber": "1.1",
+          "type": "exercise",
+          "questions": [
+            {
+              "questionNumber": "1",
+              "type": "short",
+              "difficulty": "easy",
+              "marks": 2,
+              "question": "Use Euclid's division algorithm to find the HCF of 135 and 225.",
+              "solution": {
+                "steps": [
+                  { "text": "Apply Euclid's division lemma: for integers $a$ and $b$ with $a > b > 0$, there exist unique integers $q$ and $r$ such that $a = bq + r$ where $0 \\leq r < b$." },
+                  { "text": "Step 1: $225 = 135 \\times 1 + 90$." },
+                  { "text": "Step 2: $135 = 90 \\times 1 + 45$." },
+                  { "text": "Step 3: $90 = 45 \\times 2 + 0$." },
+                  { "text": "Since the remainder is now 0, the divisor at this stage is the HCF." }
+                ],
+                "answer": "HCF(135, 225) = 45"
+              }
+            },
+            {
+              "questionNumber": "2",
+              "type": "short",
+              "difficulty": "easy",
+              "marks": 2,
+              "question": "Use Euclid's division algorithm to find the HCF of 196 and 38220.",
+              "solution": {
+                "steps": [
+                  { "text": "Since $38220 > 196$, divide $38220$ by $196$." },
+                  { "text": "Step 1: $38220 = 196 \\times 195 + 0$." },
+                  { "text": "The remainder is 0 in a single step, so $196$ divides $38220$ exactly." }
+                ],
+                "answer": "HCF(196, 38220) = 196"
+              }
+            },
+            {
+              "questionNumber": "3",
+              "type": "long",
+              "difficulty": "medium",
+              "marks": 3,
+              "question": "Show that any positive odd integer is of the form $6q + 1$, $6q + 3$, or $6q + 5$, where $q$ is some integer.",
+              "solution": {
+                "steps": [
+                  { "text": "Let $a$ be any positive odd integer. By Euclid's division lemma applied with $b = 6$, we can write $a = 6q + r$ where $0 \\leq r < 6$." },
+                  { "text": "So $r$ takes one of the values $0, 1, 2, 3, 4, 5$, giving $a = 6q$, $6q + 1$, $6q + 2$, $6q + 3$, $6q + 4$, or $6q + 5$." },
+                  { "text": "The forms $6q$, $6q + 2$, and $6q + 4$ are all even (each is divisible by 2)." },
+                  { "text": "Since $a$ is odd, the only possibilities left are $a = 6q + 1$, $6q + 3$, or $6q + 5$." }
+                ],
+                "answer": "Every positive odd integer has the form $6q + 1$, $6q + 3$, or $6q + 5$."
+              }
+            },
+            {
+              "questionNumber": "4",
+              "type": "long",
+              "difficulty": "hard",
+              "marks": 5,
+              "question": "An army contingent of 616 members is to march behind an army band of 32 members in a parade. The two groups are to march in the same number of columns. What is the maximum number of columns in which they can march?",
+              "solution": {
+                "steps": [
+                  { "text": "The maximum number of columns equals the HCF of 616 and 32, since each column must contain a whole number of people from both groups." },
+                  { "text": "Apply Euclid's division algorithm. Since $616 > 32$:" },
+                  { "text": "Step 1: $616 = 32 \\times 19 + 8$." },
+                  { "text": "Step 2: $32 = 8 \\times 4 + 0$." },
+                  { "text": "Remainder is now 0, so the HCF is the divisor at this stage, which is 8." }
+                ],
+                "answer": "The maximum number of columns is 8."
+              }
+            },
+            {
+              "questionNumber": "5",
+              "type": "long",
+              "difficulty": "medium",
+              "marks": 3,
+              "question": "Use Euclid's division lemma to show that the square of any positive integer is either of the form $3m$ or $3m + 1$ for some integer $m$.",
+              "solution": {
+                "steps": [
+                  { "text": "Let $a$ be any positive integer. By Euclid's division lemma with $b = 3$: $a = 3q + r$ for $r = 0, 1$, or $2$." },
+                  { "text": "Case 1: $a = 3q$. Then $a^2 = 9q^2 = 3(3q^2) = 3m$ where $m = 3q^2$." },
+                  { "text": "Case 2: $a = 3q + 1$. Then $a^2 = 9q^2 + 6q + 1 = 3(3q^2 + 2q) + 1 = 3m + 1$ where $m = 3q^2 + 2q$." },
+                  { "text": "Case 3: $a = 3q + 2$. Then $a^2 = 9q^2 + 12q + 4 = 9q^2 + 12q + 3 + 1 = 3(3q^2 + 4q + 1) + 1 = 3m + 1$." },
+                  { "text": "In every case, $a^2$ has the form $3m$ or $3m + 1$." }
+                ],
+                "answer": "$a^2$ is of the form $3m$ or $3m + 1$ for every positive integer $a$."
+              }
+            }
+          ]
+        },
+        {
+          "slug": "exercise-1-2",
+          "name": "Exercise 1.2",
+          "exerciseNumber": "1.2",
+          "type": "exercise",
+          "questions": [
+            {
+              "questionNumber": "1",
+              "type": "short",
+              "difficulty": "easy",
+              "marks": 2,
+              "question": "Express 140 as a product of its prime factors.",
+              "solution": {
+                "steps": [
+                  { "text": "Divide by the smallest prime factors successively." },
+                  { "text": "$140 = 2 \\times 70$." },
+                  { "text": "$70 = 2 \\times 35$." },
+                  { "text": "$35 = 5 \\times 7$." },
+                  { "text": "Combining: $140 = 2 \\times 2 \\times 5 \\times 7 = 2^2 \\times 5 \\times 7$." }
+                ],
+                "answer": "$140 = 2^2 \\times 5 \\times 7$"
+              }
+            },
+            {
+              "questionNumber": "2",
+              "type": "short",
+              "difficulty": "medium",
+              "marks": 3,
+              "question": "Find the LCM and HCF of 26 and 91 by the prime factorisation method, and verify that $\\text{LCM} \\times \\text{HCF} = \\text{product of the two numbers}$.",
+              "solution": {
+                "steps": [
+                  { "text": "Prime factorisations: $26 = 2 \\times 13$ and $91 = 7 \\times 13$." },
+                  { "text": "HCF = product of the smallest power of each common prime = $13$." },
+                  { "text": "LCM = product of the highest power of every prime that appears = $2 \\times 7 \\times 13 = 182$." },
+                  { "text": "Verify: $\\text{LCM} \\times \\text{HCF} = 182 \\times 13 = 2366$ and $26 \\times 91 = 2366$. They match." }
+                ],
+                "answer": "HCF = 13, LCM = 182, and the verification holds."
+              }
+            },
+            {
+              "questionNumber": "3",
+              "type": "long",
+              "difficulty": "hard",
+              "marks": 4,
+              "question": "Given that HCF(306, 657) = 9, find LCM(306, 657).",
+              "solution": {
+                "steps": [
+                  { "text": "Use the identity: for any two positive integers $a$ and $b$, $\\text{HCF}(a, b) \\times \\text{LCM}(a, b) = a \\times b$." },
+                  { "text": "Substitute: $9 \\times \\text{LCM}(306, 657) = 306 \\times 657$." },
+                  { "text": "$306 \\times 657 = 201042$." },
+                  { "text": "$\\text{LCM}(306, 657) = \\frac{201042}{9} = 22338$." }
+                ],
+                "answer": "LCM(306, 657) = 22338"
+              }
+            },
+            {
+              "questionNumber": "4",
+              "type": "long",
+              "difficulty": "hard",
+              "marks": 4,
+              "question": "Check whether $6^n$ can end with the digit 0 for any natural number $n$.",
+              "solution": {
+                "steps": [
+                  { "text": "A number ends in 0 only if its prime factorisation contains both 2 and 5." },
+                  { "text": "Factorise $6^n = (2 \\times 3)^n = 2^n \\times 3^n$." },
+                  { "text": "By the Fundamental Theorem of Arithmetic this factorisation is unique, and 5 does not appear." },
+                  { "text": "Therefore $6^n$ never has 5 as a factor, so it cannot end with the digit 0." }
+                ],
+                "answer": "No, $6^n$ cannot end with the digit 0 for any natural number $n$."
+              }
+            }
+          ]
+        },
+        {
+          "slug": "exercise-1-3",
+          "name": "Exercise 1.3",
+          "exerciseNumber": "1.3",
+          "type": "exercise",
+          "questions": [
+            {
+              "questionNumber": "1",
+              "type": "long",
+              "difficulty": "hard",
+              "marks": 5,
+              "question": "Prove that $\\sqrt{5}$ is irrational.",
+              "solution": {
+                "steps": [
+                  { "text": "Use proof by contradiction. Assume $\\sqrt{5}$ is rational, so $\\sqrt{5} = \\frac{p}{q}$ for some coprime integers $p, q$ with $q \\neq 0$." },
+                  { "text": "Squaring gives $5 = \\frac{p^2}{q^2}$, hence $p^2 = 5q^2$. So $5$ divides $p^2$, which means $5$ divides $p$ (a prime divides a square only if it divides the base)." },
+                  { "text": "Write $p = 5k$ for some integer $k$. Then $p^2 = 25k^2$, and substituting back gives $25k^2 = 5q^2$, so $q^2 = 5k^2$." },
+                  { "text": "By the same argument, $5$ divides $q$. But then 5 divides both $p$ and $q$, contradicting our assumption that they are coprime." },
+                  { "text": "The contradiction shows the original assumption is false, so $\\sqrt{5}$ is irrational." }
+                ],
+                "answer": "$\\sqrt{5}$ is irrational."
+              }
+            },
+            {
+              "questionNumber": "2",
+              "type": "long",
+              "difficulty": "medium",
+              "marks": 3,
+              "question": "Prove that $3 + 2\\sqrt{5}$ is irrational.",
+              "solution": {
+                "steps": [
+                  { "text": "Assume for contradiction that $3 + 2\\sqrt{5}$ is rational. Call this rational number $r$." },
+                  { "text": "Then $\\sqrt{5} = \\frac{r - 3}{2}$." },
+                  { "text": "The right-hand side is a difference and quotient of rationals, hence rational. So $\\sqrt{5}$ would be rational." },
+                  { "text": "But $\\sqrt{5}$ is irrational (proved earlier). Contradiction." }
+                ],
+                "answer": "$3 + 2\\sqrt{5}$ is irrational."
+              }
+            },
+            {
+              "questionNumber": "3",
+              "type": "short",
+              "difficulty": "medium",
+              "marks": 3,
+              "question": "Prove that $\\frac{1}{\\sqrt{2}}$ is irrational.",
+              "solution": {
+                "steps": [
+                  { "text": "Suppose $\\frac{1}{\\sqrt{2}}$ is rational. Then its reciprocal $\\sqrt{2}$ is also rational." },
+                  { "text": "But $\\sqrt{2}$ is known to be irrational, which is a contradiction." }
+                ],
+                "answer": "$\\frac{1}{\\sqrt{2}}$ is irrational."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

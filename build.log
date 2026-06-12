@@ -1,0 +1,76 @@
+$ next build
+▲ Next.js 16.2.6 (Turbopack)
+- Environments: .env.local
+- Cache Components enabled
+
+  Creating an optimized production build ...
+(node:59823) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+✓ Compiled successfully in 3.5s
+  Running TypeScript ...
+  Finished TypeScript in 3.2s ...
+  Collecting page data using 9 workers ...
+  Generating static pages using 9 workers (0/7860) ...
+  Generating static pages using 9 workers (1965/7860) 
+  Generating static pages using 9 workers (3930/7860) 
+  Generating static pages using 9 workers (5895/7860) 
+✓ Generating static pages using 9 workers (7860/7860) in 50s
+  Finalizing page optimization ...
+
+Route (app)                                                                        Revalidate  Expire
+┌ ◐ /                                                                                      1w     30d
+├ ◐ /_not-found
+├ ◐ /[board]                                                                               1w     30d
+│ ├ /[board]                                                                               1w     30d
+│ ├ /maharashtra-state-board                                                               1w     30d
+│ ├ /cbse                                                                                  1w     30d
+│ └ [+3 more paths]
+├ ◐ /[board]/[standard]                                                                    1w     30d
+│ ├ /[board]/[standard]                                                                    1w     30d
+│ ├ /maharashtra-state-board/[standard]
+│ ├ /maharashtra-state-board/class-1                                                       1w     30d
+│ └ [+63 more paths]
+├ ◐ /[board]/[standard]/[subject]                                                          1w     30d
+│ ├ /[board]/[standard]/[subject]                                                          1w     30d
+│ ├ /maharashtra-state-board/[standard]/[subject]
+│ ├ /maharashtra-state-board/class-2/[subject]
+│ └ [+543 more paths]
+├ ◐ /[board]/[standard]/[subject]/[chapter]                                                1d      1w
+│ ├ /[board]/[standard]/[subject]/[chapter]                                                1d      1w
+│ ├ /icse/[standard]/[subject]/[chapter]
+│ ├ /icse/class-1/[subject]/[chapter]
+│ └ [+3903 more paths]
+├ ◐ /[board]/[standard]/[subject]/[chapter]/[exercise]
+│ ├ /[board]/[standard]/[subject]/[chapter]/[exercise]
+│ ├ /karnataka-board/[standard]/[subject]/[chapter]/[exercise]
+│ ├ /karnataka-board/class-6/[subject]/[chapter]/[exercise]
+│ └ [+1388 more paths]
+├ ◐ /[board]/[standard]/[subject]/[chapter]/[exercise]/[question]
+│ ├ /[board]/[standard]/[subject]/[chapter]/[exercise]/[question]
+│ ├ /maharashtra-state-board/[standard]/[subject]/[chapter]/[exercise]/[question]
+│ ├ /maharashtra-state-board/class-1/[subject]/[chapter]/[exercise]/[question]
+│ └ [+1916 more paths]
+├ ƒ /api/og
+├ ƒ /apple-icon
+├ ƒ /auth/callback
+├ ◐ /forgot-password
+├ ƒ /icon
+├ ◐ /mcq                                                                                   1w     30d
+├ ◐ /notes                                                                                 1w     30d
+├ ◐ /past-papers                                                                           1w     30d
+├ ◐ /question-bank                                                                         1w     30d
+├ ◐ /reset-password
+├ ○ /robots.txt
+├ ◐ /search
+├ ◐ /sign-in
+├ ◐ /sign-up
+├ ƒ /sitemap/[__metadata_id__]
+└ ƒ /sitemaps.xml
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)             prerendered as static content
+◐  (Partial Prerender)  prerendered as static HTML with dynamic server-streamed content
+ƒ  (Dynamic)            server-rendered on demand
+

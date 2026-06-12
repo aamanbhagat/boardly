@@ -1,0 +1,35 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: shaalaa-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: shaalaa
+      POSTGRES_PASSWORD: devpassword
+      POSTGRES_DB: shaalaa
+    ports:
+      - "5433:5432"
+    volumes:
+      - shaalaa_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U shaalaa -d shaalaa"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  meilisearch:
+    image: getmeili/meilisearch:v1.11
+    container_name: shaalaa-meili
+    restart: unless-stopped
+    environment:
+      MEILI_MASTER_KEY: devMasterKey
+      MEILI_ENV: development
+      MEILI_NO_ANALYTICS: "true"
+    ports:
+      - "7700:7700"
+    volumes:
+      - shaalaa_meili:/meili_data
+
+volumes:
+  shaalaa_pg:
+  shaalaa_meili:
